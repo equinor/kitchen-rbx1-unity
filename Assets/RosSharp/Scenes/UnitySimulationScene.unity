@@ -2342,8 +2342,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9b8f32224ca04498ffd0a2e2bc0567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeout: 10
   Protocol: 1
-  RosBridgeServerUrl: ws://192.168.56.102:9090
 --- !u!4 &323852037
 Transform:
   m_ObjectHideFlags: 0
@@ -2369,10 +2369,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /joint_states
-  FrameId: Unity
   JointStateReaders:
   - {fileID: 2007794384}
   - {fileID: 446901050}
+  FrameId: Unity
 --- !u!114 &323852039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2385,8 +2385,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /odom
-  FrameId: Unity
   PublishedTransform: {fileID: 770831796}
+  FrameId: Unity
 --- !u!114 &323852040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2399,12 +2399,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /unity_image/compressed
-  FrameId: Camera
   ImageCamera: {fileID: 1858981884}
+  FrameId: Camera
   resolutionWidth: 640
   resolutionHeight: 480
   qualityLevel: 50
-  MinTime: 0
 --- !u!1 &330067229
 GameObject:
   m_ObjectHideFlags: 0
