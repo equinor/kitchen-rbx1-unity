@@ -12,12 +12,17 @@ public class JointCommandUI : MonoBehaviour
 
     void OnGUI()
     {
-        shoulderSlider = GUI.HorizontalSlider(new Rect(25, 25, 100, 30), shoulderSlider, 0.0f, 10.0f);
+        shoulderSlider = GUI.HorizontalSlider(new Rect(25, 25, 100, 30), shoulderSlider, -1.0f, 1.0f);
 
         if (GUI.Button(new Rect(25, 55, 100, 30), "Apply"))
         {
-            joints[0].transform.Rotate(100 * Time.deltaTime, 0, 0);
+            //var j = joints[0];
+            //var x = j.transform.eulerAngles.x;
+            //var z = j.transform.eulerAngles.z;
+            //var y = j.transform.eulerAngles.y;
+            //Vector3 desiredRot = new Vector3(x, y + (shoulderSlider * 360), z);
 
+            //j.transform.rotation = Quaternion.Lerp(j.transform.rotation, Quaternion.Euler(desiredRot), 100f * Time.deltaTime);
         }
     }
 }
