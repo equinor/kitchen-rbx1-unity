@@ -23,7 +23,8 @@ namespace RosSharp.RosBridgeClient
         private Joint joint;
         private JointUrdfDataManager jointUrdfDataManager;
 
-        private float newState; // rad or m
+        // TODO: was private
+        public float newState; // rad or m
         private float prevState; // rad or m
         private bool isNewStateReceived;
 
