@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JointCommandUI : MonoBehaviour {
+public class JointCommandUI : MonoBehaviour
+{
 
     public GameObject[] joints;
 
@@ -16,7 +17,7 @@ public class JointCommandUI : MonoBehaviour {
         if (GUI.Button(new Rect(25, 55, 100, 30), "Apply"))
         {
             joints[0].transform.Rotate(100 * Time.deltaTime, 0, 0);
-            
+
         }
     }
 }

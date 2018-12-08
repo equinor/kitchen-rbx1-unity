@@ -6,38 +6,56 @@ using System.Net;
 using RosSharp.RosBridgeClient.Protocols;
 using RBX1.UI;
 using UnityEngine.SceneManagement;
+using System.Linq;
+using System.Net.Sockets;
 
 namespace RBX1.Manager
 {
-    public class ConnectionManager : MonoBehaviour {
-      
-      public GameObject RosConnectorObject;
-      // Use this for initialization
-      void Start () {
-        ConnectionSettingsUI.OnConnectClicked += ConnectToIp;
-        ConnectionSettingsUI.OnStartClicked += StartRbx1;        
-      }
-      
-      // Update is called once per frame
-      void Update () {
-        
-      }
 
-      public void ConnectToIp(string ip) {
-        if (!CheckValidIP(ip)) return;
-        RosConnector.ServerUrl = $"ws://{ip}:9090";
-      }
+    public class ConnectionManager : MonoBehaviour
+    {
 
-      public void StartRbx1() {
-        SceneManager.LoadScene("Rbx1Scene", LoadSceneMode.Single);
-      }
+        public bool isValidIp;
+        public GameObject ValidElement;
+        // Use this for initialization
+        void Start()
+        {
+            ValidElement.SetActive(false);
+        }
 
-      public static bool CheckValidIP(string ip)
-      {
-          IPAddress result = null;
-          return
-              ip != null && !"".Equals(ip) &&
-              IPAddress.TryParse(ip, out result);
-      }
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        public void TestIp(string ip)
+        {
+            if (!CheckValidIP(ip))
+            {
+                isValidIp = false;
+                ValidElement.SetActive(false);
+            }
+            else
+            {
+                RosConnector.ServerUrl = $"ws://{ip}:9090";
+                isValidIp = true;
+                ValidElement.SetActive(true);
+            }
+        }
+
+        public void StartRbx1()
+        {
+            if (!isValidIp) return;
+            SceneManager.LoadScene("Rbx1Scene", LoadSceneMode.Single);
+        }
+
+        private static bool CheckValidIP(string ip)
+        {
+            if (ip == null || "".Equals(ip)) return false;
+            if (ip.Count(c => c == '.') != 3 && !ip.Contains(":")) return false;
+            IPAddress result = null;
+            return IPAddress.TryParse(ip, out result);
+        }
     }
 }

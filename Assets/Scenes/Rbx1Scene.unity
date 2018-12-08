@@ -6942,6 +6942,7 @@ GameObject:
   - component: {fileID: 1743342667}
   - component: {fileID: 1743342666}
   - component: {fileID: 1743342665}
+  - component: {fileID: 1743342670}
   - component: {fileID: 1743342669}
   m_Layer: 0
   m_Name: RosConnector
@@ -7041,23 +7042,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1743342664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f562e2709255bd84d8c7856ba765aadf, type: 3}
+  m_Script: {fileID: 11500000, guid: 0297db9a74427dd4c8f0c54526915112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Horizontal
+--- !u!114 &1743342670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1743342664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 377f0f6df72421f43b945ef23b6b232b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /rbx1_joint_controller/command
-  JointStateReaders:
-  - {fileID: 168695328}
-  - {fileID: 461248489}
-  - {fileID: 362501451}
-  - {fileID: 833130014}
-  - {fileID: 966327569}
-  - {fileID: 1824616827}
-  - {fileID: 1131635636}
-  - {fileID: 2040360034}
-  - {fileID: 1048613183}
-  - {fileID: 1211656026}
-  - {fileID: 448936703}
-  - {fileID: 907928129}
   FrameId: Unity
 --- !u!1 &1747721854
 GameObject:
