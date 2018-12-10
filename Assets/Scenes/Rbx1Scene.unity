@@ -1127,11 +1127,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc3c39e79842114e99abcab38246c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joints:
+  Joints:
   - {fileID: 1307327631}
   - {fileID: 964457856}
   - {fileID: 1392509455}
   - {fileID: 1433132112}
+  - {fileID: 970459472}
+  - {fileID: 1003294323}
+  RosConnector: {fileID: 1743342664}
 --- !u!4 &129524716
 Transform:
   m_ObjectHideFlags: 0
@@ -1144,7 +1147,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &149564659
 GameObject:
@@ -1458,6 +1461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &168695328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1774,6 +1778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &200853713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2674,6 +2679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &362501451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3258,6 +3264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &448936703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3539,6 +3546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &461248489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4068,7 +4076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b1dc5b60920034495fb203d0342f76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2076587942}
+  target: {fileID: 1545423088}
   distance: 3
   xSpeed: 120
   ySpeed: 120
@@ -5822,6 +5830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &833130014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6334,6 +6343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!1 &913463894
 GameObject:
   m_ObjectHideFlags: 0
@@ -6717,6 +6727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &936639210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6988,6 +6999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &964457860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7073,7 +7085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axis: Vertical
-  speed: 2
+  speed: 1
 --- !u!1 &966327562
 GameObject:
   m_ObjectHideFlags: 0
@@ -7199,6 +7211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &966327569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7274,6 +7287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &970459476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7587,6 +7601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &1003294327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8343,6 +8358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &1048613183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8417,6 +8433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &1050986941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9253,7 +9270,7 @@ Transform:
   m_Children:
   - {fileID: 2066286843}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1107029161
 GameObject:
@@ -9477,6 +9494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &1131635636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10029,6 +10047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &1211656026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11002,6 +11021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &1307327635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11087,7 +11107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axis: Horizontal
-  speed: 2
+  speed: 1
 --- !u!1 &1310325573
 GameObject:
   m_ObjectHideFlags: 0
@@ -11584,6 +11604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &1392509459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11669,7 +11690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axis: HorizontalAxis2
-  speed: 3
+  speed: 2
 --- !u!1 &1393338144
 GameObject:
   m_ObjectHideFlags: 0
@@ -11937,6 +11958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &1433132116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12201,6 +12223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &1448289194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12869,6 +12892,34 @@ Transform:
   - {fileID: 1310349582}
   m_Father: {fileID: 296149347}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1545423087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1545423088}
+  m_Layer: 0
+  m_Name: CameraTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1545423088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545423087}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.231, y: 0.413, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557579940
 GameObject:
@@ -14066,7 +14117,6 @@ GameObject:
   - component: {fileID: 1743342667}
   - component: {fileID: 1743342666}
   - component: {fileID: 1743342665}
-  - component: {fileID: 1743342670}
   - component: {fileID: 1743342669}
   m_Layer: 0
   m_Name: RosConnector
@@ -14156,7 +14206,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1743342669
 MonoBehaviour:
@@ -14166,23 +14216,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1743342664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0297db9a74427dd4c8f0c54526915112, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Horizontal
---- !u!114 &1743342670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1743342664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 377f0f6df72421f43b945ef23b6b232b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ba63835c9fb9d54b97ffbd76a7987e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Topic: /rbx1_joint_controller/command
-  FrameId: Unity
+  messageData: []
 --- !u!1 &1747721854
 GameObject:
   m_ObjectHideFlags: 0
@@ -14931,6 +14969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &1824616827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14989,6 +15028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &1827594211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15227,6 +15267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &1848742267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16674,6 +16715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c206c4a70bdfd4b8fff9393bf1efb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newState: 0
 --- !u!114 &2040360034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17083,7 +17125,7 @@ Transform:
   m_Children:
   - {fileID: 1969814340}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2079143948
 GameObject:
