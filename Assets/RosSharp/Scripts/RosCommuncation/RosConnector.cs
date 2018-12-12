@@ -30,7 +30,7 @@ namespace RosSharp.RosBridgeClient
         public Protocols Protocol;
         public static string ServerUrl = "ws://192.168.10.126:9090";
         public string RosBridgeServerUrl = ServerUrl;
-
+        public bool ConnectionStatus;
         private ManualResetEvent IsConnected = new ManualResetEvent(false);
 
         public void Awake()
@@ -66,12 +66,14 @@ namespace RosSharp.RosBridgeClient
         private void OnConnected(object sender, EventArgs e)
         {
             IsConnected.Set();
+            ConnectionStatus = true;
             Debug.Log("Connected to RosBridge: " + RosBridgeServerUrl);
         }
 
         private void OnClosed(object sender, EventArgs e)
         {
             Debug.Log("Disconnected from RosBridge: " + RosBridgeServerUrl);
+            ConnectionStatus = false;
         }
 
     }

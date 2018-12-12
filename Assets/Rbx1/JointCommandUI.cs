@@ -9,12 +9,27 @@ public class JointCommandUI : MonoBehaviour
     public GameObject[] Joints;
     public GameObject RosConnector;
 
+    private Float64MultiArrayPublisher pub;
+    private RosConnector ros;
+
+    void Start() {
+        pub = RosConnector.GetComponent<Float64MultiArrayPublisher>();
+        ros = RosConnector.GetComponent<RosConnector>();
+    }
+
     void OnGUI()
     {
         var moveTo = new float[] { getAngle(Joints[0]), getAngle(Joints[1]),
                 getAngle(Joints[2]), getAngle(Joints[3]), getAngle(Joints[4]), getAngle(Joints[5]) };
 
         GUI.Box(new Rect(10, 10, 130, 240), "");
+        if (ros.ConnectionStatus) {
+            GUI.Label(new Rect(20, 10, 90, 30), "Connected");
+        }
+        else {
+            GUI.Label(new Rect(20, 10, 90, 30), "Disconnected");
+        }
+
         GUI.Label(new Rect(20, 30, 70, 30), "Shoulder");
         GUI.Label(new Rect(90, 30, 50, 30), moveTo[0].ToString("0.00"));
         GUI.Label(new Rect(20, 50, 70, 30), "Arm");
@@ -29,7 +44,6 @@ public class JointCommandUI : MonoBehaviour
         GUI.Label(new Rect(90, 130, 50, 30), moveTo[5].ToString("0.00"));
         if (GUI.Button(new Rect(25, 210, 100, 30), "Apply"))
         {
-            var pub = RosConnector.GetComponent<Float64MultiArrayPublisher>();
             pub.PublishPosition(moveTo);
         }
     }
