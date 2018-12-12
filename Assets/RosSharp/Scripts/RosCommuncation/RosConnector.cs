@@ -49,6 +49,7 @@ namespace RosSharp.RosBridgeClient
 
         private RosBridgeClient.Protocols.IProtocol GetProtocol()
         {
+            RosBridgeServerUrl = ServerUrl;
             switch (Protocol)
             {
                 case Protocols.WebSocketSharp:
