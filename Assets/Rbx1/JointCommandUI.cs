@@ -11,6 +11,7 @@ public class JointCommandUI : MonoBehaviour
 
     private Float64MultiArrayPublisher pub;
     private RosConnector ros;
+    private float time = 0.0F;
 
     void Start() {
         pub = RosConnector.GetComponent<Float64MultiArrayPublisher>();
@@ -30,21 +31,32 @@ public class JointCommandUI : MonoBehaviour
             GUI.Label(new Rect(20, 10, 90, 30), "Disconnected");
         }
 
-        GUI.Label(new Rect(20, 30, 70, 30), "Shoulder");
-        GUI.Label(new Rect(90, 30, 50, 30), moveTo[0].ToString("0.00"));
-        GUI.Label(new Rect(20, 50, 70, 30), "Arm");
-        GUI.Label(new Rect(90, 50, 50, 30), moveTo[1].ToString("0.00"));
-        GUI.Label(new Rect(20, 70, 70, 30), "Upper");
-        GUI.Label(new Rect(90, 70, 50, 30), moveTo[2].ToString("0.00"));
-        GUI.Label(new Rect(20, 90, 70, 30), "Forearm");
-        GUI.Label(new Rect(90, 90, 50, 30), moveTo[3].ToString("0.00"));
-        GUI.Label(new Rect(20, 110, 70, 30), "Wrist");
-        GUI.Label(new Rect(90, 110, 50, 30), moveTo[4].ToString("0.00"));
-        GUI.Label(new Rect(20, 130, 70, 30), "Hand");
-        GUI.Label(new Rect(90, 130, 50, 30), moveTo[5].ToString("0.00"));
-        if (GUI.Button(new Rect(25, 210, 100, 30), "Apply"))
+        const int labelY = 30;
+        GUI.Label(new Rect(20, labelY, 70, 30), "Shoulder");
+        GUI.Label(new Rect(90, labelY, 50, 30), moveTo[0].ToString("0.00"));
+        GUI.Label(new Rect(20, labelY + 20, 70, 30), "Arm");
+        GUI.Label(new Rect(90, labelY + 20, 50, 30), moveTo[1].ToString("0.00"));
+        GUI.Label(new Rect(20, labelY + 40, 70, 30), "Upper");
+        GUI.Label(new Rect(90, labelY + 40, 50, 30), moveTo[2].ToString("0.00"));
+        GUI.Label(new Rect(20, labelY + 60, 70, 30), "Forearm");
+        GUI.Label(new Rect(90, labelY + 60, 50, 30), moveTo[3].ToString("0.00"));
+        GUI.Label(new Rect(20, labelY + 80, 70, 30), "Wrist");
+        GUI.Label(new Rect(90, labelY + 80, 50, 30), moveTo[4].ToString("0.00"));
+        GUI.Label(new Rect(20, labelY + 100, 70, 30), "Hand");
+        GUI.Label(new Rect(90, labelY + 100, 50, 30), moveTo[5].ToString("0.00"));
+
+        if (GUI.Button(new Rect(25, 180, 100, 30), "Home"))
         {
+             Debug.Log("Home");
+            pub.PublishPosition(new float[] {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f} );
+        }
+
+        time = time + Time.deltaTime;
+        if (GUI.Button(new Rect(25, 210, 100, 30), "Apply") || (Input.GetButton("FireJoy") && time > 0.5f))
+        {
+            Debug.Log("Apply");
             pub.PublishPosition(moveTo);
+            time = 0.0f;
         }
     }
 
