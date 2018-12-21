@@ -924,7 +924,6 @@ GameObject:
   - component: {fileID: 107416526}
   - component: {fileID: 107416525}
   - component: {fileID: 107416523}
-  - component: {fileID: 107416524}
   m_Layer: 5
   m_Name: ImagePlane
   m_TagString: Untagged
@@ -939,15 +938,15 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 107416522}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 629ba037307c122499049ca580bb479f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -967,20 +966,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &107416524
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 107416522}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &107416525
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -996,14 +981,14 @@ RectTransform:
   m_GameObject: {fileID: 107416522}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 20, y: 10, z: -17}
+  m_LocalScale: {x: 30, y: 10, z: -25}
   m_Children: []
   m_Father: {fileID: 1811687110}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 105.79999, y: 89.399994}
+  m_AnchoredPosition: {x: 151.5, y: 128.5}
   m_SizeDelta: {x: 153.2, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &110836104
@@ -1226,6 +1211,7 @@ MonoBehaviour:
   - {fileID: 1433132112}
   - {fileID: 970459472}
   - {fileID: 1003294323}
+  - {fileID: 1050986937}
   RosConnector: {fileID: 1743342664}
 --- !u!4 &129524716
 Transform:
@@ -1821,6 +1807,7 @@ GameObject:
   - component: {fileID: 200853714}
   - component: {fileID: 200853713}
   - component: {fileID: 200853712}
+  - component: {fileID: 200853717}
   m_Layer: 0
   m_Name: gripper_idol_gear
   m_TagString: Untagged
@@ -1944,6 +1931,20 @@ MonoBehaviour:
   CenterOfMass: {x: -0, y: 0, z: 0}
   InertiaTensor: {x: 0.000001, y: 0.000001, z: 0.3}
   InertiaTensorRotation: {x: 0.31392512, y: 0.45872486, z: 0.7853792, w: 0.27240047}
+--- !u!114 &200853717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 200853709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979d298af9407b044aafbf3f36d632c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IncrementButton: FireGripperOpen
+  DecrementButton: FireGripperClose
+  Speed: 1
 --- !u!1 &217490860
 GameObject:
   m_ObjectHideFlags: 0
@@ -8476,6 +8477,7 @@ GameObject:
   - component: {fileID: 1050986942}
   - component: {fileID: 1050986941}
   - component: {fileID: 1050986940}
+  - component: {fileID: 1050986945}
   m_Layer: 0
   m_Name: gripper_servo_gear
   m_TagString: Untagged
@@ -8599,6 +8601,20 @@ MonoBehaviour:
   CenterOfMass: {x: -0, y: 0, z: 0}
   InertiaTensor: {x: 0.000001, y: 0.000001, z: 0.3}
   InertiaTensorRotation: {x: 0.31392512, y: 0.45872486, z: 0.7853792, w: 0.27240047}
+--- !u!114 &1050986945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1050986937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979d298af9407b044aafbf3f36d632c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IncrementButton: FireGripperOpen
+  DecrementButton: FireGripperClose
+  Speed: 1
 --- !u!1 &1054009439
 GameObject:
   m_ObjectHideFlags: 0
@@ -10103,7 +10119,7 @@ HingeJoint:
   m_UseLimits: 1
   m_Limits:
     min: 0
-    max: 89.994484
+    max: 90
     bounciness: 0
     bounceMinVelocity: 0
     contactDistance: 0
@@ -14211,6 +14227,7 @@ GameObject:
   - component: {fileID: 1743342665}
   - component: {fileID: 1743342669}
   - component: {fileID: 1743342670}
+  - component: {fileID: 1743342671}
   m_Layer: 0
   m_Name: RosConnector
   m_TagString: Untagged
@@ -14329,6 +14346,19 @@ MonoBehaviour:
   Topic: overview_camera/image_raw/compressed
   TimeStep: 0
   meshRenderer: {fileID: 107416523}
+--- !u!114 &1743342671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1743342664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ba63835c9fb9d54b97ffbd76a7987e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Topic: /rbx1_gripper_controller/command
+  messageData: []
 --- !u!1 &1747721854
 GameObject:
   m_ObjectHideFlags: 0

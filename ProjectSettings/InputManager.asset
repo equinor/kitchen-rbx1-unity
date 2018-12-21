@@ -198,13 +198,13 @@ InputManager:
     axis: 6
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Fire1
+    m_Name: FireGripperOpen
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left ctrl
+    positiveButton: joystick button 1
     altNegativeButton: 
-    altPositiveButton: mouse 0
+    altPositiveButton: u
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -214,13 +214,13 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Fire2
+    m_Name: FireGripperClose
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left alt
+    positiveButton: joystick button 2
     altNegativeButton: 
-    altPositiveButton: mouse 1
+    altPositiveButton: y
     gravity: 1000
     dead: 0.001
     sensitivity: 1000

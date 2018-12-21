@@ -1,6 +1,7 @@
 ﻿using RosSharp.RosBridgeClient;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class JointCommandUI : MonoBehaviour
@@ -9,12 +10,15 @@ public class JointCommandUI : MonoBehaviour
     public GameObject[] Joints;
     public GameObject RosConnector;
 
-    private Float64MultiArrayPublisher pub;
+    private Float64MultiArrayPublisher jointPub;
+    private Float64MultiArrayPublisher gripperPub;
     private RosConnector ros;
     private float time = 0.0F;
 
     void Start() {
-        pub = RosConnector.GetComponent<Float64MultiArrayPublisher>();
+        var publishers = RosConnector.GetComponents<Float64MultiArrayPublisher>();
+        jointPub = publishers.FirstOrDefault();
+        gripperPub = publishers.LastOrDefault();
         ros = RosConnector.GetComponent<RosConnector>();
     }
 
@@ -48,14 +52,17 @@ public class JointCommandUI : MonoBehaviour
         if (GUI.Button(new Rect(25, 180, 100, 30), "Home"))
         {
              Debug.Log("Home");
-            pub.PublishPosition(new float[] {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f} );
+            jointPub.PublishPosition(new float[] {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f} );
         }
 
         time = time + Time.deltaTime;
         if (GUI.Button(new Rect(25, 210, 100, 30), "Apply") || (Input.GetButton("FireJoy") && time > 0.5f))
         {
             Debug.Log("Apply");
-            pub.PublishPosition(moveTo);
+            jointPub.PublishPosition(moveTo);
+
+            var gripAngle = getAngle(Joints[6]);
+            gripperPub.PublishPosition(new float[] {gripAngle, gripAngle});
             time = 0.0f;
         }
     }
