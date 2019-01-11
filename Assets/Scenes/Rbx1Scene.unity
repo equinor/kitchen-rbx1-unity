@@ -1487,7 +1487,7 @@ HingeJoint:
   m_GameObject: {fileID: 168695321}
   m_ConnectedBody: {fileID: 2052727448}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: -1, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: 0.2425, y: 0, z: 0}
   m_UseSpring: 0
@@ -5871,7 +5871,7 @@ HingeJoint:
   m_GameObject: {fileID: 833130007}
   m_ConnectedBody: {fileID: 362501446}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0.99993, y: -0.0059382, z: 0.010353}
+  m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: 0.00099213, y: 0, z: 0.16988}
   m_UseSpring: 0
@@ -11162,7 +11162,7 @@ HingeJoint:
   m_GameObject: {fileID: 1307327631}
   m_ConnectedBody: {fileID: 1601134296}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: -1, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: 0.2425, y: 0, z: 0}
   m_UseSpring: 0
@@ -12099,7 +12099,7 @@ HingeJoint:
   m_GameObject: {fileID: 1433132112}
   m_ConnectedBody: {fileID: 1392509457}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0.99993, y: -0.0059382, z: 0.010353}
+  m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: 0.00099213, y: 0, z: 0.16988}
   m_UseSpring: 0
