@@ -14,6 +14,8 @@ public class JointCommandUI : MonoBehaviour
     private Float64MultiArrayPublisher gripperPub;
     private RosConnector ros;
     private float time = 0.0F;
+    private string goToPosString = "0.0,0.0,0.0,0.0,0.0,0.0,0.0";
+    private bool isKeyToggled;
 
     void Start() {
         var publishers = RosConnector.GetComponents<Float64MultiArrayPublisher>();
@@ -22,6 +24,9 @@ public class JointCommandUI : MonoBehaviour
         ros = RosConnector.GetComponent<RosConnector>();
     }
 
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Q)) isKeyToggled = !isKeyToggled;
+    }
     void OnGUI()
     {
         var moveTo = new float[] { getAngle(Joints[0]), getAngle(Joints[1]),
@@ -51,20 +56,50 @@ public class JointCommandUI : MonoBehaviour
 
         if (GUI.Button(new Rect(25, 180, 100, 30), "Home"))
         {
-             Debug.Log("Home");
             jointPub.PublishPosition(new float[] {0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f} );
         }
 
         time = time + Time.deltaTime;
         if (GUI.Button(new Rect(25, 210, 100, 30), "Apply") || (Input.GetButton("FireJoy") && time > 0.5f))
         {
-            Debug.Log("Apply");
             jointPub.PublishPosition(moveTo);
 
             var gripAngle = getAngle(Joints[6]);
             gripperPub.PublishPosition(new float[] {gripAngle, gripAngle});
             time = 0.0f;
         }
+
+        if(isKeyToggled) {
+            goToPosString = GUI.TextField (new Rect (25, 270, 140, 30), goToPosString);
+            if (GUI.Button(new Rect(25, 305, 100, 30), "Pose"))
+            {
+                ApplyPoseIfValid(goToPosString);
+            }
+
+            if (GUI.Button(new Rect(25, 335, 100, 30), "Reset"))
+            {
+                goToPosString = "";
+            }
+        }
+    }
+
+    private void ApplyPoseIfValid(string text) {
+        if (text == null) return;
+        var numberArray = text.Split(',');
+        if (numberArray.Count() < 7) return;
+        try
+        {
+            float[] numbers = numberArray.Select(float.Parse).ToArray();
+            for(var i = 0; i < Joints.Count(); i += 1) {
+                var writer = Joints[i].GetComponent<JointMover>();
+                writer.SetState(numbers[i]);
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log(e.Message);
+            return;
+        }  
     }
 
     private float getAngle(GameObject jointObject)

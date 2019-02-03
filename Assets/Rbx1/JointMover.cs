@@ -21,4 +21,8 @@ public class JointMover : MonoBehaviour {
         newState += translation;
         joint.Write(newState);
     }
+
+    public void SetState(float angle) {
+        newState = angle;
+    }
 }
