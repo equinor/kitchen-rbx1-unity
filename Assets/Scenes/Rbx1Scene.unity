@@ -7252,7 +7252,7 @@ HingeJoint:
   m_GameObject: {fileID: 966327562}
   m_ConnectedBody: {fileID: 833130009}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: -1, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: -0.053041, y: 0.0016936, z: -0.0021346}
   m_UseSpring: 0
@@ -7413,7 +7413,7 @@ HingeJoint:
   m_GameObject: {fileID: 970459472}
   m_ConnectedBody: {fileID: 1433132114}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: -1, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: -0.053041, y: 0.0016936, z: -0.0021346}
   m_UseSpring: 0
