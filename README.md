@@ -1,3 +1,5 @@
+ARCHIVED: Experiment for Innovation Kitchen in 2019. Not in use and therefore archived.
+
 ## RBX1 Unity Control
 RBX1 robot arm remote viewer. Connects to a running ROS device, and receives and delivers messages over ROS topics. 
 * Viewer displays current physical state of the arm
